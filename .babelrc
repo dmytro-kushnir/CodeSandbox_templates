@@ -4,7 +4,8 @@
   ],
   "plugins": [
     "transform-runtime",
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-private-methods"
   ],
   "parserOpts": {
     "plugins": [

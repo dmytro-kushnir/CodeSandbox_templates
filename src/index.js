@@ -1,5 +1,6 @@
 import "./styles.css";
 import Route from "./samples/iterator.mjs";
+import BST_Iterator from "./samples/bst_iterator.mjs";
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
@@ -33,3 +34,24 @@ print(JSON.stringify(g.next()));
 print(JSON.stringify(g.next()));
 print(JSON.stringify(g.next()));
 print(JSON.stringify(g.next()));
+
+const root = {
+  val: 2,
+  left: {
+    val: 1,
+    left: null,
+    right: null
+  },
+  right: {
+    val: 3,
+    left: null,
+    right: null
+  }
+};
+const bstIterator = new BST_Iterator(root);
+
+print(bstIterator.next());
+print(bstIterator.hasNext());
+print(bstIterator.next());
+print(bstIterator.next());
+print(bstIterator.hasNext());
