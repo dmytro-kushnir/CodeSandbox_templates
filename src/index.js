@@ -1,6 +1,6 @@
 import "./styles.css";
 import Route from "./samples/iterator.mjs";
-import BST_Iterator from "./samples/bst_iterator.mjs";
+import BST_Iterator from "./samples/bst_traverse.mjs";
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
