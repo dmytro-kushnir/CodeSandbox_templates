@@ -1,3 +1,4 @@
+import { print }  from "../utils"
 // https://leetcode.com/problems/binary-search-tree-iterator/
 /* 
 Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST):
@@ -59,3 +60,28 @@ export default class BST_Iterator {
     return !this.#state.done;
   }
 }
+
+
+(() => {
+  const root = {
+    val: 2,
+    left: {
+      val: 1,
+      left: null,
+      right: null
+    },
+    right: {
+      val: 3,
+      left: null,
+      right: null
+    }
+  };
+  const bstIterator = new BST_Iterator(root);
+  
+
+  print(bstIterator.next());
+  print(bstIterator.hasNext());
+  print(bstIterator.next());
+  print(bstIterator.next());
+  print(bstIterator.hasNext());
+})()

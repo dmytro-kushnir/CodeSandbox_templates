@@ -1,6 +1,7 @@
 import "./styles.css";
-import Route from "./samples/iterator.mjs";
-import BST_Iterator from "./samples/bst_traverse.mjs";
+// import Route from "./samples/iterator_class.mjs";
+// import BST_Iterator from "./samples/bst_traverse.mjs";
+import async from "./samples/async_generator.mjs";
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
@@ -10,48 +11,3 @@ document.getElementById("app").innerHTML = `
   <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
 </div>
 `;
-
-function print(item) {
-  console.log(item);
-  document.getElementById("app").innerHTML += `\n<b>${item}</b></br>`;
-}
-
-const route = new Route(["london", "New York", "Paris"]);
-
-for (let item of route) {
-  print(item);
-}
-
-function* gen() {
-  yield* route;
-
-  return "x";
-}
-
-const g = gen();
-print(JSON.stringify(g.next()));
-print(JSON.stringify(g.next()));
-print(JSON.stringify(g.next()));
-print(JSON.stringify(g.next()));
-print(JSON.stringify(g.next()));
-
-const root = {
-  val: 2,
-  left: {
-    val: 1,
-    left: null,
-    right: null
-  },
-  right: {
-    val: 3,
-    left: null,
-    right: null
-  }
-};
-const bstIterator = new BST_Iterator(root);
-
-print(bstIterator.next());
-print(bstIterator.hasNext());
-print(bstIterator.next());
-print(bstIterator.next());
-print(bstIterator.hasNext());
