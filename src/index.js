@@ -2,8 +2,9 @@ import "./styles.css";
 // import Route from "./samples/iterator_class.mjs";
 // import BST_Iterator from "./samples/bst_traverse.mjs";
 // import async from "./samples/async_generator.mjs";
-import nextTick from "./samples/next_tick.mjs";
+// import nextTick from "./samples/next_tick.mjs";
 // import range from "./samples/range_iterator.mjs";
+import search from "./samples/binary_search.mjs";
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
