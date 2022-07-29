@@ -4,7 +4,8 @@ import "./styles.css";
 // import async from "./samples/async_generator.mjs";
 // import nextTick from "./samples/next_tick.mjs";
 // import range from "./samples/range_iterator.mjs";
-import search from "./samples/binary_search.mjs";
+// import search from "./samples/binary_search.mjs";
+import observer from "./samples/observer_proxy.mjs";
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>

@@ -12,8 +12,9 @@ function count() {
       allows the event loop to repaint before pushing it’s callback into the JavaScript call stack.
     */
     // timeout is about 4ms
-    setTimeout(count); // time for all operation: 3824-4300 ms
-    // nextTick(count); // time for all operation: 3769-4200 ms
+    // setTimeout(count, 0); // time for all operation: 3824-4300 ms
+    nextTick(count); // time for all operation: 3769-4200 ms
+    // queueMicrotask(count); // time for all operation: 592 ms but freezes the UI since Microtask queue is not empty
   } else {
     console.timeEnd("timer");
   }
@@ -33,7 +34,7 @@ const nextTick = (function () {
     window.postMessage &&
     window.addEventListener;
   if (canSetImmediate) {
-    console.log("!", true);
+    console.log("I can canSetImmediate", true);
     return function (f) {
       return window.setImmediate(f);
     };
